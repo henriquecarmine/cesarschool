@@ -1,0 +1,8 @@
+### core network inspect core_net-sbi
+[{"Subnet":"10.10.0.0/16","Gateway":"10.10.0.1"}]
+
+### core network inspect core_net-n2
+[{"Subnet":"10.20.0.0/16","Gateway":"10.20.0.1"}]
+
+### core network inspect core_net-n3
+[{"Subnet":"10.30.0.0/16","Gateway":"10.30.0.1"}]

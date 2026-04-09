@@ -1,0 +1,22 @@
+### add-subscriber
+==========================================
+Adicionar Subscriber ao MongoDB
+==========================================
+
+[1;33mAdicionando subscriber:[0m
+  IMSI: 001010000000002
+  MSISDN: 33638060000
+
+[1;33m⚠️  Subscriber já existe. Removendo...[0m
+[1;33mInserindo subscriber no MongoDB...[0m
+[0;32m✅ Subscriber adicionado com sucesso![0m
+
+Verificando subscriber:
+{
+  _id: ObjectId('69d8024ee17c63a5c944ba89'),
+  imsi: '001010000000002',
+  msisdn: '33638060000'
+}
+
+[1;33m💡 Dica: Reinicie o UERANSIM para registrar de novo:[0m
+  docker restart ueransim

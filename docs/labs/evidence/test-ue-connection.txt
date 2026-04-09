@@ -1,0 +1,52 @@
+### test ue connection
+==========================================
+Teste de Conexão End-to-End - UE
+==========================================
+
+✅ Container ueransim está rodando
+
+📡 Verificando IP do UE...
+✅ UE possui IP: 10.60.0.2
+
+🔍 Teste 1: Ping para servidores DNS públicos
+--------------------------------------------
+  Testando 8.8.8.8... ✅ OK (RTT médio: 25.660ms)
+  Testando 8.8.4.4... ✅ OK (RTT médio: 7.788ms)
+  Testando 1.1.1.1... ✅ OK (RTT médio: 8.838ms)
+
+🔍 Teste 2: Resolução DNS
+--------------------------------------------
+  Resolvendo google.com via 8.8.8.8... ✅ OK (IP: 172.217.172.174)
+
+🔍 Teste 3: Acesso HTTP
+--------------------------------------------
+  Testando http://ifconfig.me... ✅ OK (resposta: 45.238.118.152...)
+  Testando http://icanhazip.com... ✅ OK (resposta: 45.238.118.152...)
+
+🔍 Teste 4: Verificar rota padrão (container UERANSIM)
+--------------------------------------------
+  Gateway padrão: 10.20.0.1
+
+🔍 Teste 5: Conectividade com UPF
+--------------------------------------------
+  Testando conectividade com UPF (10.40.0.21)... ⚠️  Não acessível diretamente (normal — UPF pode não responder ICMP)
+
+🔍 Teste 6: Verificar sessão PDU e registro de UE
+--------------------------------------------
+  Verificando conexão N2 (AMF <-> gNB)...
+  ✅ Conexão N2 / NGAP indicada nos logs do AMF
+  Verificando associação PFCP (SMF <-> UPF)...
+  ✅ Associação PFCP estabelecida (SMF <-> UPF)
+  ✅ UE registrado no AMF: [MM-REGISTERED/NORMAL-SERVICE]
+
+  💡 Dica: ../core/scripts/test-system-status.sh — verificação detalhada
+
+==========================================
+Resumo dos Testes
+==========================================
+
+IP do UE: 10.60.0.2
+Gateway: 10.20.0.1
+
+✅ Testes de conectividade básica concluídos!
+

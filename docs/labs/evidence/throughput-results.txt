@@ -1,0 +1,34 @@
+=== N2 throughput AMF -> gNB ===
+iperf3: interrupt - the client has terminated
+Connecting to host 10.20.0.11, port 5201
+[  5] local 10.20.0.101 port 51048 connected to 10.20.0.11 port 5201
+[ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+[  5]   0.00-1.00   sec  2.65 GBytes  22.7 Gbits/sec    0   2.01 MBytes       
+[  5]   1.00-2.00   sec  3.37 GBytes  28.9 Gbits/sec    0   3.63 MBytes       
+[  5]   2.00-3.00   sec  3.18 GBytes  27.3 Gbits/sec    0   3.81 MBytes       
+[  5]   3.00-4.00   sec  2.89 GBytes  24.8 Gbits/sec    1   3.81 MBytes       
+[  5]   4.00-5.00   sec  3.29 GBytes  28.3 Gbits/sec    0   4.00 MBytes       
+[  5]   5.00-6.00   sec  3.33 GBytes  28.6 Gbits/sec    0   4.00 MBytes       
+[  5]   6.00-7.00   sec  2.73 GBytes  23.4 Gbits/sec    0   4.00 MBytes       
+[  5]   7.00-8.00   sec  3.01 GBytes  25.8 Gbits/sec    0   4.00 MBytes       
+[  5]   8.00-8.24   sec   691 MBytes  24.5 Gbits/sec    0   4.00 MBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Retr
+[  5]   0.00-8.24   sec  25.1 GBytes  26.2 Gbits/sec    1             sender
+[  5]   0.00-8.24   sec  0.00 Bytes  0.00 bits/sec                  receiver
+=== N3 throughput gNB -> UPF ===
+iperf3: interrupt - the client has terminated
+Connecting to host 10.30.0.21, port 5201
+[  5] local 10.30.0.11 port 59246 connected to 10.30.0.21 port 5201
+[ ID] Interval           Transfer     Bitrate         Retr  Cwnd
+[  5]   0.00-1.00   sec  2.68 GBytes  23.0 Gbits/sec    0   3.79 MBytes       
+[  5]   1.00-2.00   sec  3.04 GBytes  26.2 Gbits/sec    0   3.79 MBytes       
+[  5]   2.00-3.00   sec  2.52 GBytes  21.7 Gbits/sec    0   3.98 MBytes       
+[  5]   3.00-4.00   sec  2.97 GBytes  25.5 Gbits/sec    0   3.98 MBytes       
+[  5]   4.00-5.00   sec  2.82 GBytes  24.2 Gbits/sec    0   3.98 MBytes       
+[  5]   5.00-6.00   sec  2.19 GBytes  18.9 Gbits/sec    0   3.98 MBytes       
+[  5]   6.00-6.06   sec   102 MBytes  15.2 Gbits/sec    0   3.98 MBytes       
+- - - - - - - - - - - - - - - - - - - - - - - - -
+[ ID] Interval           Transfer     Bitrate         Retr
+[  5]   0.00-6.06   sec  16.3 GBytes  23.2 Gbits/sec    0             sender
+[  5]   0.00-6.06   sec  0.00 Bytes  0.00 bits/sec                  receiver

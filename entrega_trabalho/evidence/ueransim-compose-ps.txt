@@ -1,0 +1,3 @@
+### ueransim compose ps
+NAME       IMAGE                     COMMAND                  SERVICE    CREATED          STATUS                    PORTS
+ueransim   gradiant/ueransim:3.2.6   "/bin/bash /entrypoi…"   ueransim   22 minutes ago   Up 22 minutes (healthy)   

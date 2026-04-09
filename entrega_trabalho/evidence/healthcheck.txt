@@ -1,0 +1,72 @@
+### healthcheck
+==========================================
+Healthcheck - Laboratório Open5GS
+==========================================
+
+Status dos containers:
+NAME                            IMAGE                          COMMAND                   SERVICE   CREATED       STATUS                   PORTS
+open5gs-amf-containerized       gradiant/open5gs:2.7.6         "/entrypoint.sh /opt…"    amf       2 hours ago   Up 2 hours (healthy)     
+open5gs-ausf-containerized      gradiant/open5gs:2.7.6         "/entrypoint.sh /opt…"    ausf      2 hours ago   Up 2 hours (healthy)     
+open5gs-dn-containerized        alpine:latest                  "sh -c '\n  apk add -…"   dn        2 hours ago   Up 2 hours               
+open5gs-mongodb-containerized   mongo:7.0                      "docker-entrypoint.s…"    mongodb   2 hours ago   Up 2 hours (healthy)     27017/tcp
+open5gs-nrf-containerized       gradiant/open5gs:2.7.6         "/entrypoint.sh /opt…"    nrf       2 hours ago   Up 2 hours (healthy)     
+open5gs-nssf-containerized      gradiant/open5gs:2.7.6         "/entrypoint.sh /opt…"    nssf      2 hours ago   Up 2 hours (healthy)     
+open5gs-pcf-containerized       gradiant/open5gs:2.7.6         "/scripts/init-pcf.sh"    pcf       2 hours ago   Up 2 hours (healthy)     
+open5gs-scp-containerized       gradiant/open5gs:2.7.6         "/entrypoint.sh /opt…"    scp       2 hours ago   Up 2 hours (healthy)     
+open5gs-smf-containerized       gradiant/open5gs:2.7.6         "/entrypoint.sh /opt…"    smf       2 hours ago   Up 2 hours (healthy)     
+open5gs-udm-containerized       gradiant/open5gs:2.7.6         "/entrypoint.sh /opt…"    udm       2 hours ago   Up 2 hours (healthy)     
+open5gs-udr-containerized       gradiant/open5gs:2.7.6         "/scripts/init-udr.sh"    udr       2 hours ago   Up 2 hours (healthy)     
+open5gs-upf-containerized       gradiant/open5gs:2.7.6         "/entrypoint.sh /opt…"    upf       2 hours ago   Up 2 hours (healthy)     
+open5gs-webui-containerized     gradiant/open5gs-webui:2.7.6   "node server/index.js"    webui     2 hours ago   Up 2 hours (unhealthy)   0.0.0.0:9999->9999/tcp, [::]:9999->9999/tcp
+
+Verificando processos dos serviços...
+[0;32m✓ pcf está rodando[0m
+[0;32m✓ nrf está rodando[0m
+[0;32m✓ smf está rodando[0m
+[0;32m✓ upf está rodando[0m
+[0;32m✓ nssf está rodando[0m
+[0;32m✓ scp está rodando[0m
+[0;32m✓ amf está rodando[0m
+[0;32m✓ udm está rodando[0m
+[0;32m✓ udr está rodando[0m
+[0;32m✓ ausf está rodando[0m
+
+Verificando NRF...
+[0;32m✓ NRF está rodando e escutando na porta 7777[0m
+
+Verificando registro de NFs no NRF...
+✓ NRF está healthy (NFs devem estar registradas)
+  (Para verificar registro detalhado, consulte os logs: docker compose logs nrf | grep 'NF registered')
+
+Verificando conectividade de rede...
+Testando N2 (AMF <-> gNB em 10.20.0.101):
+[0;32m✓ AMF pode alcançar gNB[0m
+Testando N3 (gNB <-> UPF):
+[0;32m✓ (UERANSIM) gNB pode alcançar UPF[0m
+Testando N4 (SMF <-> UPF):
+[0;32m✓ SMF pode alcançar UPF[0m
+Testando N4 (SMF <-> UPF-B):
+Testando N6 (UPF <-> DN):
+[0;32m✓ UPF pode alcançar DN[0m
+
+Verificando NG Setup (gNB <-> AMF)...
+[0;32m✓ NG Setup bem-sucedido (1 vez(es))[0m
+[0;32m✓ Nenhum erro de AMF context encontrado[0m
+
+Verificando associação PFCP (SMF <-> UPF)...
+[0;32m✓ Associação PFCP estabelecida (SMF <-> UPF)[0m
+
+Verificando status do UE (UERANSIM)...
+[0;32m✓ Processos UERANSIM (nr-ue / nr-gnb) ativos[0m
+[0;32m  ✓ UE possui IP: 10.60.0.2[0m
+[0;32m  ✓ Conectividade ativa[0m
+[0;32m  ✓ UE encontrou células[0m
+
+==========================================
+Healthcheck concluído
+==========================================
+
+💡 Dicas:
+  - Para verificação detalhada: ../core/scripts/test-system-status.sh
+  - Para teste de conectividade: ../ueransim/scripts/test_ue_connection.sh
+
